@@ -3,6 +3,12 @@
 Todas las versiones notables de este proyecto.
 
 
+## [0.3.0](https://github.com/RaulGow/library-components/compare/v0.2.0...v0.3.0) (2026-06-03)
+
+### 🔧 Chores
+
+* **storybook:** configure global HTML source formatting ([bbb7ac4](https://github.com/RaulGow/library-components/commit/bbb7ac4cbcc55296d284ca3316500323a1e80711))
+
 ## [0.2.0](https://github.com/RaulGow/library-components/compare/v0.1.0...v0.2.0) (2026-06-03)
 
 ### 🔧 Chores
