@@ -21,6 +21,16 @@ const preview: Preview = {
         { name: 'white', value: '#ffffff' },
       ],
     },
+    //plugin para mostrar el HTML generado por Angular sin los atributos de depuración (_nghost, ng-reflect, etc.)
+    html: {
+      transform: (code: string) =>
+        code.replace(/(?:_nghost|ng-reflect).*?="[\S\s]*?"/g, ''),
+
+      highlighter: {
+        showLineNumbers: true,
+        wrapLines: false,
+      },
+    },
   },
 };
 

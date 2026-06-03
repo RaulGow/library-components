@@ -11,6 +11,112 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "AllVariants",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <div style=\"display: flex; flex-direction: column; gap: 16px; padding: 24px;\">\r\n        <div style=\"display: flex; gap: 12px; align-items: center;\">\r\n          <ui-button variant=\"primary\">Primary</ui-button>\r\n          <ui-button variant=\"secondary\">Secondary</ui-button>\r\n          <ui-button variant=\"ghost\">Ghost</ui-button>\r\n          <ui-button variant=\"danger\">Danger</ui-button>\r\n        </div>\r\n        <div style=\"display: flex; gap: 12px; align-items: center;\">\r\n          <ui-button size=\"sm\">Small</ui-button>\r\n          <ui-button size=\"md\">Medium</ui-button>\r\n          <ui-button size=\"lg\">Large</ui-button>\r\n        </div>\r\n        <div style=\"display: flex; gap: 12px; align-items: center;\">\r\n          <ui-button disabled>Disabled</ui-button>\r\n          <ui-button loading>Loading</ui-button>\r\n        </div>\r\n      </div>\r\n    `,\r\n  }),\r\n}",
+                "rawdescription": "Todas las variantes juntas para comparación visual",
+                "description": "<p>Todas las variantes juntas para comparación visual</p>\n"
+            },
+            {
+                "name": "Danger",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: { variant: 'danger' } as any,\r\n}",
+                "rawdescription": "Variante danger — acciones destructivas",
+                "description": "<p>Variante danger — acciones destructivas</p>\n"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{}",
+                "rawdescription": "Estado por defecto",
+                "description": "<p>Estado por defecto</p>\n"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: { disabled: true } as any,\r\n}",
+                "rawdescription": "Estado deshabilitado",
+                "description": "<p>Estado deshabilitado</p>\n"
+            },
+            {
+                "name": "FullWidth",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: { fullWidth: true } as any,\r\n}",
+                "rawdescription": "Ancho completo",
+                "description": "<p>Ancho completo</p>\n"
+            },
+            {
+                "name": "Ghost",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: { variant: 'ghost' } as any,\r\n}",
+                "rawdescription": "Variante ghost — acción terciaria sin borde",
+                "description": "<p>Variante ghost — acción terciaria sin borde</p>\n"
+            },
+            {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: { size: 'lg' } as any,\r\n}",
+                "rawdescription": "Tamaño grande",
+                "description": "<p>Tamaño grande</p>\n"
+            },
+            {
+                "name": "Loading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: { loading: true } as any,\r\n}",
+                "rawdescription": "Estado de carga",
+                "description": "<p>Estado de carga</p>\n"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ButtonComponent>",
+                "defaultValue": "{\r\n  title: 'Components/Button',\r\n  component: ButtonComponent,\r\n\r\n  // autodocs genera una página de documentación automática con la tabla\r\n  // de props, ejemplos de código y descripción de cada @Input/@Output\r\n  tags: ['autodocs'],\r\n\r\n  //plugins: ['storybook-addon-html'], // Si quieres usar el addon HTML para mostrar el código generado\r\n  parameters: {\r\n    html: {\r\n      transform: (code: string) =>\r\n        code.replace(/(?:_nghost|ng-reflect).*?=\"[\\S\\s]*?\"/g, ''),\r\n      highlighter: {\r\n        showLineNumbers: true,\r\n        wrapLines: false,\r\n      },\r\n    },\r\n  },\r\n\r\n  // argTypes define cómo se muestran los @Input en el panel de controles\r\n  argTypes: {\r\n    variant: {\r\n      control: 'select',\r\n      options: ['primary', 'secondary', 'ghost', 'danger'],\r\n      description: 'Variante visual del botón',\r\n      table: {\r\n        defaultValue: { summary: 'primary' },\r\n      },\r\n    },\r\n    size: {\r\n      control: 'select',\r\n      options: ['sm', 'md', 'lg'],\r\n      description: 'Tamaño del botón',\r\n      table: {\r\n        defaultValue: { summary: 'md' },\r\n      },\r\n    },\r\n    disabled: {\r\n      control: 'boolean',\r\n      description: 'Deshabilita el botón',\r\n      table: {\r\n        defaultValue: { summary: 'false' },\r\n      },\r\n    },\r\n    loading: {\r\n      control: 'boolean',\r\n      description: 'Muestra spinner de carga',\r\n      table: {\r\n        defaultValue: { summary: 'false' },\r\n      },\r\n    },\r\n    fullWidth: {\r\n      control: 'boolean',\r\n      description: 'Ocupa el 100% del ancho del contenedor',\r\n      table: {\r\n        defaultValue: { summary: 'false' },\r\n      },\r\n    },\r\n    buttonClick: {\r\n      action: 'buttonClick',\r\n      description: 'Evento emitido al hacer click',\r\n    },\r\n  },\r\n\r\n  // render define cómo se renderiza el componente en el canvas.\r\n  // props recibe los args del panel de controles y los pasa al componente.\r\n  render: (args) => ({\r\n    props: args,\r\n    // El texto se pasa como contenido proyectado (ng-content)\r\n    template: `\r\n      <ui-button\r\n        [variant]=\"variant\"\r\n        [size]=\"size\"\r\n        [disabled]=\"disabled\"\r\n        [loading]=\"loading\"\r\n        [fullWidth]=\"fullWidth\"\r\n        (buttonClick)=\"buttonClick()\"\r\n      >\r\n        {{ label }}\r\n      </ui-button>\r\n    `,\r\n  }),\r\n\r\n  // args por defecto para todas las stories\r\n  args: {\r\n    label: 'Button',\r\n    variant: 'primary',\r\n    size: 'md',\r\n    disabled: false,\r\n    loading: false,\r\n    fullWidth: false,\r\n  } as any,\r\n}"
+            },
+            {
                 "name": "preview",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -19,12 +125,204 @@
                 "deprecationMessage": "",
                 "type": "Preview",
                 "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /date$/i,\n      },\n    },\n    backgrounds: {\n      default: 'light',\n      values: [\n        { name: 'light', value: '#f9fafb' },\n        { name: 'dark',  value: '#111827' },\n        { name: 'white', value: '#ffffff' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: { variant: 'primary' } as any,\r\n}",
+                "rawdescription": "Variante primaria — acción principal",
+                "description": "<p>Variante primaria — acción principal</p>\n"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: { variant: 'secondary' } as any,\r\n}",
+                "rawdescription": "Variante secundaria — acción secundaria con borde",
+                "description": "<p>Variante secundaria — acción secundaria con borde</p>\n"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: { size: 'sm' } as any,\r\n}",
+                "rawdescription": "Tamaño pequeño",
+                "description": "<p>Tamaño pequeño</p>\n"
             }
         ],
         "functions": [],
-        "typealiases": [],
+        "typealiases": [
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ButtonComponent>",
+                "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            }
+        ],
         "enumerations": [],
         "groupedVariables": {
+            "projects/ui-lib/src/lib/button/button.stories.ts": [
+                {
+                    "name": "AllVariants",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <div style=\"display: flex; flex-direction: column; gap: 16px; padding: 24px;\">\r\n        <div style=\"display: flex; gap: 12px; align-items: center;\">\r\n          <ui-button variant=\"primary\">Primary</ui-button>\r\n          <ui-button variant=\"secondary\">Secondary</ui-button>\r\n          <ui-button variant=\"ghost\">Ghost</ui-button>\r\n          <ui-button variant=\"danger\">Danger</ui-button>\r\n        </div>\r\n        <div style=\"display: flex; gap: 12px; align-items: center;\">\r\n          <ui-button size=\"sm\">Small</ui-button>\r\n          <ui-button size=\"md\">Medium</ui-button>\r\n          <ui-button size=\"lg\">Large</ui-button>\r\n        </div>\r\n        <div style=\"display: flex; gap: 12px; align-items: center;\">\r\n          <ui-button disabled>Disabled</ui-button>\r\n          <ui-button loading>Loading</ui-button>\r\n        </div>\r\n      </div>\r\n    `,\r\n  }),\r\n}",
+                    "rawdescription": "Todas las variantes juntas para comparación visual",
+                    "description": "<p>Todas las variantes juntas para comparación visual</p>\n"
+                },
+                {
+                    "name": "Danger",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: { variant: 'danger' } as any,\r\n}",
+                    "rawdescription": "Variante danger — acciones destructivas",
+                    "description": "<p>Variante danger — acciones destructivas</p>\n"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{}",
+                    "rawdescription": "Estado por defecto",
+                    "description": "<p>Estado por defecto</p>\n"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: { disabled: true } as any,\r\n}",
+                    "rawdescription": "Estado deshabilitado",
+                    "description": "<p>Estado deshabilitado</p>\n"
+                },
+                {
+                    "name": "FullWidth",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: { fullWidth: true } as any,\r\n}",
+                    "rawdescription": "Ancho completo",
+                    "description": "<p>Ancho completo</p>\n"
+                },
+                {
+                    "name": "Ghost",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: { variant: 'ghost' } as any,\r\n}",
+                    "rawdescription": "Variante ghost — acción terciaria sin borde",
+                    "description": "<p>Variante ghost — acción terciaria sin borde</p>\n"
+                },
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: { size: 'lg' } as any,\r\n}",
+                    "rawdescription": "Tamaño grande",
+                    "description": "<p>Tamaño grande</p>\n"
+                },
+                {
+                    "name": "Loading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: { loading: true } as any,\r\n}",
+                    "rawdescription": "Estado de carga",
+                    "description": "<p>Estado de carga</p>\n"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ButtonComponent>",
+                    "defaultValue": "{\r\n  title: 'Components/Button',\r\n  component: ButtonComponent,\r\n\r\n  // autodocs genera una página de documentación automática con la tabla\r\n  // de props, ejemplos de código y descripción de cada @Input/@Output\r\n  tags: ['autodocs'],\r\n\r\n  //plugins: ['storybook-addon-html'], // Si quieres usar el addon HTML para mostrar el código generado\r\n  parameters: {\r\n    html: {\r\n      transform: (code: string) =>\r\n        code.replace(/(?:_nghost|ng-reflect).*?=\"[\\S\\s]*?\"/g, ''),\r\n      highlighter: {\r\n        showLineNumbers: true,\r\n        wrapLines: false,\r\n      },\r\n    },\r\n  },\r\n\r\n  // argTypes define cómo se muestran los @Input en el panel de controles\r\n  argTypes: {\r\n    variant: {\r\n      control: 'select',\r\n      options: ['primary', 'secondary', 'ghost', 'danger'],\r\n      description: 'Variante visual del botón',\r\n      table: {\r\n        defaultValue: { summary: 'primary' },\r\n      },\r\n    },\r\n    size: {\r\n      control: 'select',\r\n      options: ['sm', 'md', 'lg'],\r\n      description: 'Tamaño del botón',\r\n      table: {\r\n        defaultValue: { summary: 'md' },\r\n      },\r\n    },\r\n    disabled: {\r\n      control: 'boolean',\r\n      description: 'Deshabilita el botón',\r\n      table: {\r\n        defaultValue: { summary: 'false' },\r\n      },\r\n    },\r\n    loading: {\r\n      control: 'boolean',\r\n      description: 'Muestra spinner de carga',\r\n      table: {\r\n        defaultValue: { summary: 'false' },\r\n      },\r\n    },\r\n    fullWidth: {\r\n      control: 'boolean',\r\n      description: 'Ocupa el 100% del ancho del contenedor',\r\n      table: {\r\n        defaultValue: { summary: 'false' },\r\n      },\r\n    },\r\n    buttonClick: {\r\n      action: 'buttonClick',\r\n      description: 'Evento emitido al hacer click',\r\n    },\r\n  },\r\n\r\n  // render define cómo se renderiza el componente en el canvas.\r\n  // props recibe los args del panel de controles y los pasa al componente.\r\n  render: (args) => ({\r\n    props: args,\r\n    // El texto se pasa como contenido proyectado (ng-content)\r\n    template: `\r\n      <ui-button\r\n        [variant]=\"variant\"\r\n        [size]=\"size\"\r\n        [disabled]=\"disabled\"\r\n        [loading]=\"loading\"\r\n        [fullWidth]=\"fullWidth\"\r\n        (buttonClick)=\"buttonClick()\"\r\n      >\r\n        {{ label }}\r\n      </ui-button>\r\n    `,\r\n  }),\r\n\r\n  // args por defecto para todas las stories\r\n  args: {\r\n    label: 'Button',\r\n    variant: 'primary',\r\n    size: 'md',\r\n    disabled: false,\r\n    loading: false,\r\n    fullWidth: false,\r\n  } as any,\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: { variant: 'primary' } as any,\r\n}",
+                    "rawdescription": "Variante primaria — acción principal",
+                    "description": "<p>Variante primaria — acción principal</p>\n"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: { variant: 'secondary' } as any,\r\n}",
+                    "rawdescription": "Variante secundaria — acción secundaria con borde",
+                    "description": "<p>Variante secundaria — acción secundaria con borde</p>\n"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: { size: 'sm' } as any,\r\n}",
+                    "rawdescription": "Tamaño pequeño",
+                    "description": "<p>Tamaño pequeño</p>\n"
+                }
+            ],
             "projects/ui-lib/.storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -40,7 +338,21 @@
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
-        "groupedTypeAliases": {}
+        "groupedTypeAliases": {
+            "projects/ui-lib/src/lib/button/button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ButtonComponent>",
+                    "file": "projects/ui-lib/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ]
+        }
     },
     "routes": {
         "name": "<root>",
@@ -48,8 +360,8 @@
         "children": []
     },
     "coverage": {
-        "count": 0,
-        "status": "low",
+        "count": 78,
+        "status": "very-good",
         "files": [
             {
                 "filePath": "projects/ui-lib/.storybook/preview.ts",
@@ -57,6 +369,136 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "preview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "AllVariants",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Danger",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FullWidth",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Ghost",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Loading",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/ui-lib/src/lib/button/button.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

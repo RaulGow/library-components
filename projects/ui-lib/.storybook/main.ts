@@ -11,6 +11,7 @@ const config: StorybookConfig = {
 
   addons: [
     '@storybook/addon-a11y',
+    '@whitespace/storybook-addon-html',
   ],
 
   framework: '@storybook/angular',
