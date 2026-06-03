@@ -1,0 +1,9 @@
+// =============================================================================
+// PUNTO DE ENTRADA DE ESTILOS
+// =============================================================================
+// Barrel principal. Importa todos los tokens en orden.
+// Los proyectos consumidores solo necesitan importar este fichero.
+// =============================================================================
+@forward 'tokens/colors';
+@forward 'tokens/typography';
+@forward 'tokens/spacing';

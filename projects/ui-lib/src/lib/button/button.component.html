@@ -1,0 +1,30 @@
+<!--
+  Usamos un <button> nativo en lugar de <div> o <span> por accesibilidad:
+  - Es focusable por teclado de forma nativa
+  - Es anunciado correctamente por lectores de pantalla
+  - Soporta los atributos disabled y type de forma nativa
+  - Participa correctamente en formularios con type="submit"
+
+  [ngClass] recibe el objeto de cssClasses del componente.
+  [disabled] deshabilita el botón nativo cuando está disabled O loading.
+  [attr.aria-label] solo renderiza el atributo si ariaLabel tiene valor.
+  [attr.aria-busy] informa a lectores de pantalla que hay una operación en curso.
+-->
+<button
+  [type]="type"
+  [ngClass]="cssClasses"
+  [disabled]="disabled || loading"
+  [attr.aria-label]="ariaLabel || null"
+  [attr.aria-busy]="loading || null"
+  (click)="handleClick()"
+>
+  <!-- Spinner — solo visible cuando loading=true -->
+  @if (loading) {
+    <span class="ui-button__spinner" aria-hidden="true"></span>
+  }
+
+  <!-- Contenido del botón — ng-content proyecta el texto o iconos del padre -->
+  <span class="ui-button__content" [class.ui-button__content--hidden]="loading">
+    <ng-content />
+  </span>
+</button>

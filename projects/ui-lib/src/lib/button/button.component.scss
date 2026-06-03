@@ -1,0 +1,209 @@
+// =============================================================================
+// BUTTON COMPONENT STYLES
+// =============================================================================
+// Todos los valores visuales usan CSS Custom Properties definidas en los
+// tokens. NUNCA se usan valores hardcodeados de color, espaciado o tipografía.
+//
+// TEORÍA — BEM (Block Element Modifier):
+// Usamos la metodología BEM para nombrar clases CSS:
+//   Block:    .ui-button          → el componente en sí
+//   Element:  .ui-button__spinner → parte interna del componente
+//   Modifier: .ui-button--primary → variación del estado o apariencia
+//
+// BEM evita colisiones de nombres en librerías porque cada clase
+// es autocontenida y descriptiva de su relación con el bloque padre.
+// =============================================================================
+
+// ---------------------------------------------------------------------------
+// BASE — estilos comunes a todas las variantes y tamaños
+// ---------------------------------------------------------------------------
+.ui-button {
+  // Reset de estilos nativos del navegador
+  appearance: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+
+  // Layout interno con flexbox para alinear spinner + texto
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+
+  // Tipografía
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+
+  // Forma
+  border-radius: var(--radius-md);
+
+  // Transición suave para hover/focus/active
+  transition:
+    background-color var(--transition-fast),
+    border-color     var(--transition-fast),
+    color            var(--transition-fast),
+    box-shadow       var(--transition-fast),
+    opacity          var(--transition-fast);
+
+  // Focus visible — accesibilidad con teclado
+  // outline-offset separa el outline del borde del botón para legibilidad
+  &:focus-visible {
+    outline: 2px solid var(--color-brand-default);
+    outline-offset: 2px;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// TAMAÑOS
+// Usan los tokens --component-height para altura y --spacing para padding.
+// ---------------------------------------------------------------------------
+.ui-button--sm {
+  height: var(--component-height-sm);
+  padding: 0 var(--spacing-sm);
+  font-size: var(--font-size-sm);
+}
+
+.ui-button--md {
+  height: var(--component-height-md);
+  padding: 0 var(--spacing-md);
+  font-size: var(--font-size-base);
+}
+
+.ui-button--lg {
+  height: var(--component-height-lg);
+  padding: 0 var(--spacing-lg);
+  font-size: var(--font-size-md);
+}
+
+// ---------------------------------------------------------------------------
+// VARIANTES
+// Cada variante define su combinación de background, border y color de texto.
+// ---------------------------------------------------------------------------
+
+// Primary — acción principal, máximo peso visual
+.ui-button--primary {
+  background-color: var(--color-brand-default);
+  border-color:     var(--color-brand-default);
+  color:            var(--color-text-inverse);
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-brand-hover);
+    border-color:     var(--color-brand-hover);
+  }
+
+  &:active:not(:disabled) {
+    background-color: var(--color-brand-active);
+    border-color:     var(--color-brand-active);
+  }
+}
+
+// Secondary — acción secundaria, con borde visible
+.ui-button--secondary {
+  background-color: transparent;
+  border-color:     var(--color-border-brand);
+  color:            var(--color-text-brand);
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-brand-subtle-hover);
+  }
+
+  &:active:not(:disabled) {
+    background-color: var(--color-brand-subtle);
+  }
+}
+
+// Ghost — acción terciaria, sin borde ni fondo hasta el hover
+.ui-button--ghost {
+  background-color: transparent;
+  border-color:     transparent;
+  color:            var(--color-text-brand);
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-brand-subtle);
+  }
+
+  &:active:not(:disabled) {
+    background-color: var(--color-brand-subtle-hover);
+  }
+}
+
+// Danger — acciones destructivas (borrar, cancelar)
+.ui-button--danger {
+  background-color: var(--color-error-text);
+  border-color:     var(--color-error-text);
+  color:            var(--color-text-inverse);
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-error-border);
+    border-color:     var(--color-error-border);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// ESTADOS
+// ---------------------------------------------------------------------------
+
+// Disabled — opacity + cursor indican visualmente que no es interactivo
+.ui-button--disabled,
+.ui-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+// Full width — ocupa todo el ancho del contenedor
+.ui-button--full-width {
+  width: 100%;
+}
+
+// Loading — oculta el texto y muestra el spinner
+.ui-button--loading {
+  cursor: wait;
+  pointer-events: none;
+}
+
+// ---------------------------------------------------------------------------
+// ELEMENTOS INTERNOS
+// ---------------------------------------------------------------------------
+
+// Contenedor del texto/iconos proyectados con ng-content
+.ui-button__content {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+
+  // Cuando loading=true ocultamos el texto pero mantenemos el espacio
+  // para que el botón no cambie de tamaño al cargar
+  &--hidden {
+    visibility: hidden;
+    width: 0;
+    overflow: hidden;
+  }
+}
+
+// Spinner animado con CSS puro — sin dependencias externas
+.ui-button__spinner {
+  // Posición absoluta centrada sobre el contenido
+  position: absolute;
+
+  // Tamaño proporcional al botón
+  width: 1em;
+  height: 1em;
+  border-radius: var(--radius-full);
+
+  // Borde parcial que rota para crear efecto de carga
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+
+  // Animación de rotación continua
+  animation: ui-button-spin 0.6s linear infinite;
+}
+
+@keyframes ui-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

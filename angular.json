@@ -42,7 +42,10 @@
               "-d",
               "projects/ui-lib"
             ],
-            "port": 6006
+            "port": 6006,
+            "styles": [
+              "projects/ui-lib/src/styles/_index.scss"
+            ]
           }
         },
         "build-storybook": {
@@ -57,7 +60,10 @@
               "-d",
               "projects/ui-lib"
             ],
-            "outputDir": "storybook-static"
+            "outputDir": "storybook-static",
+            "styles": [
+              "projects/ui-lib/src/styles/_index.scss"
+            ]
           }
         }
       }
