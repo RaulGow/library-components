@@ -3,6 +3,12 @@
 Todas las versiones notables de este proyecto.
 
 
+## [0.2.0](https://github.com/RaulGow/library-components/compare/v0.1.0...v0.2.0) (2026-06-03)
+
+### 🔧 Chores
+
+* **release:** enable automatic git push after release ([86bba08](https://github.com/RaulGow/library-components/commit/86bba087ec99bc61d698fa4479a4f3667828dbc6))
+
 ## 0.1.0 (2026-06-03)
 
 ### ✨ Features
