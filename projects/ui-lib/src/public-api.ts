@@ -3,3 +3,5 @@
  */
 
 export * from './lib/ui-lib';
+
+export * from './lib/button/button.component';
